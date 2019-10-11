@@ -15,6 +15,8 @@ var config = require('./config.dev');
 var mongoose = require('mongoose');
 mongoose.connect(config.mongodb, {useNewUrlParser: true });
 
+var apiAuthRouter = require('./routes/api/auth');
+
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var passport = require('passport');
@@ -70,6 +72,8 @@ passport.serializeUser(function (user, done) {
 passport.deserializeUser(function (user, done) {
   done(null, user);
 });
+
+app.use('/api/auth', apiAuthRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

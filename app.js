@@ -12,6 +12,10 @@ var config = require('./config.dev');
 var mongoose = require('mongoose');
 mongoose.connect(config.mongodb, {useNewUrlParser: true });
 
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+var passport = require('passport');
+
 var app = express();
 
 // view engine setup

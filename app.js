@@ -18,10 +18,11 @@ mongoose.connect(config.mongodb, {useNewUrlParser: true });
 var apiAuthRouter = require('./routes/api/auth');
 
 var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
-var passport = require('passport');
 
 var app = express();
+
+var MongoStore = require('connect-mongo')(session);
+var passport = require('passport');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

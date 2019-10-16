@@ -48,7 +48,7 @@ var authApp = (function() {
       xhr.send(JSON.stringify(object));
       xhr.onload = function () {
         let data = JSON.parse(xhr.response);
-        console.log(data);
+        //console.log(data);
 
         if (data.success === true) {
           window.location.href = '/';
@@ -62,7 +62,6 @@ var authApp = (function() {
   return {
     load: function () {
       loginForm();
-
       postRequest('loginForm', '/api/auth/login');
     }
   }

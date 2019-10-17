@@ -118,12 +118,8 @@ var authApp = (function() {
   }
 })();
 
-authApp.load();
-
 var validate = (function () {
-
   function confirmPasswordMatch() {
-
     let pw = document.getElementById('password');
     let cpw = document.getElementById('confirm_password');
 
@@ -132,7 +128,6 @@ var validate = (function () {
     } else {
       cpw.setCustomValidity("");
     }
-
   }
 
   return {
@@ -144,5 +139,6 @@ var validate = (function () {
         });
     }
   }
-
 })();
+
+authApp.load();
